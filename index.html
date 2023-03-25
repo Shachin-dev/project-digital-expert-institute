@@ -20,14 +20,60 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.6.2/tailwind.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <!-- Navbar Start -->
-
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="./index.html" class="brand">Brand</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" href="#home">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#about">About</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#courses">Courses</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- <span><i class="bx bx-search search-toggle"></i></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div> -->
+      </nav>
+    </header>
     <!-- Navbar End -->
     <!-- Homepage Start -->
-    <div class="homepage" style="background-color: #278dbd">
+    <div
+      id="home"
+      class="homepage"
+      style="background-color: #278dbd; margin-top: 64px"
+    >
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-sm-6 d-flex align-items-center">
@@ -68,7 +114,7 @@
     </div>
     <!-- Homepage End -->
     <!-- Aboutpage Start -->
-    <div class="container">
+    <div id="about" class="container">
       <div class="sm:flex items-center max-w-screen-xl">
         <div class="sm:w-1/2 p-10">
           <div class="image object-center text-center">
@@ -95,7 +141,7 @@
     </div>
     <!-- Aboutpage End -->
     <!-- Coursepage Start -->
-    <div class="container">
+    <div id="courses" class="container">
       <div class="row">
         <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h1 class="gallery-title">Our Courses</h1>
@@ -242,7 +288,7 @@
     </div>
     <!-- Coursepage End -->
     <!-- Footer Start -->
-    <footer class="footer-section">
+    <footer id="footer" class="footer-section">
       <div class="container">
         <div class="footer-cta pt-5 pb-5">
           <div class="row">
@@ -432,5 +478,49 @@
       });
     </script>
     <!-- Filter End -->
+    <!-- Navbar Start -->
+    <script>
+      // Open and Close Navbar Menu
+      const navbarMenu = document.getElementById("menu");
+      const burgerMenu = document.getElementById("burger");
+      const bgOverlay = document.querySelector(".overlay");
+
+      if (burgerMenu && bgOverlay) {
+        burgerMenu.addEventListener("click", () => {
+          navbarMenu.classList.add("is-active");
+          bgOverlay.classList.toggle("is-active");
+        });
+
+        bgOverlay.addEventListener("click", () => {
+          navbarMenu.classList.remove("is-active");
+          bgOverlay.classList.toggle("is-active");
+        });
+      }
+
+      // Close Navbar Menu on Links Click
+      document.querySelectorAll(".menu-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navbarMenu.classList.remove("is-active");
+          bgOverlay.classList.remove("is-active");
+        });
+      });
+
+      // Open and Close Search Bar Toggle
+      const searchBlock = document.querySelector(".search-block");
+      const searchToggle = document.querySelector(".search-toggle");
+      const searchCancel = document.querySelector(".search-cancel");
+
+      if (searchToggle && searchCancel) {
+        searchToggle.addEventListener("click", () => {
+          searchBlock.classList.add("is-active");
+        });
+
+        searchCancel.addEventListener("click", () => {
+          searchBlock.classList.remove("is-active");
+        });
+      }
+    </script>
+    <!-- navbar End -->
+    <!-- background: linear-gradient(45deg, #4199fe, #74b4fe); -->
   </body>
 </html>
