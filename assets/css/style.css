@@ -60,6 +60,11 @@ img {
   text-transform: uppercase;
   color: var(--color-blue-100);
 }
+
+.brand img {
+  height: 50px;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -94,6 +99,7 @@ img {
 .menu.is-active {
   top: 0;
   left: 0;
+  background-color: #4199fe;
 }
 .menu-inner {
   display: flex;
@@ -107,7 +113,7 @@ img {
   font-weight: 500;
   line-height: 1.5;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: #fff;
   transition: all 0.3s ease;
 }
 .menu-link:hover {
@@ -309,7 +315,7 @@ ul {
 }
 .cta-text span {
   color: #757575;
-  font-size: 15px;
+  font-size: 13px;
 }
 .footer-content {
   position: relative;
